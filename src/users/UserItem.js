@@ -1,12 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const UserItem = (props) => {
-  const { avatar_url, login, html_url } = props.user;
+const UserItem = ({ user: { avatar_url, login, html_url } }) => {
   return (
     <div className='card text-center'>
       <img
         src={avatar_url}
-        alt='randi'
+        alt='ranasdasdi'
         className='round-img'
         style={{
           width: '60px',
@@ -22,4 +22,7 @@ const UserItem = (props) => {
   );
 };
 
+UserItem.propTypes = {
+  user: PropTypes.object.isRequired,
+};
 export default UserItem;
